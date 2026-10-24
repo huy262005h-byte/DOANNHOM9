@@ -1,0 +1,32 @@
+# Maven build output
+target/
+*.jar
+*.war
+*.ear
+dependency-reduced-pom.xml
+
+# IDE & Editor files
+.idea/
+*.iml
+.vscode/
+.settings/
+.project/
+.classpath
+nbproject/
+nb-configuration.xml
+
+# Runtime data & Database files
+SyncData/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+.versions/
+.trash/
+
+# OS temporary files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*~
