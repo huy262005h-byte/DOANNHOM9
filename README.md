@@ -122,3 +122,36 @@ DOANCS/
 1. Mở NetBeans $\rightarrow$ **File** $\rightarrow$ **Open Project...** $\rightarrow$ Chọn thư mục `DOANCS`.
 2. NetBeans sẽ nhận diện cấu trúc dự án Maven với các gói `common`, `server`, `client`, `gui`, `util`.
 3. Nhấn **F6** (hoặc chuột phải vào Project $\rightarrow$ **Run**) để chạy ứng dụng.
+
+---
+
+## 4. CHIẾN LƯỢC PHÂN NHÁNH VÀ QUY TẮC COMMIT (GIT RULES)
+
+Dự án tuân thủ nghiêm ngặt quy chế làm việc nhóm và bảo vệ nhánh:
+- **Nhánh chính (`main`)**: Được bảo vệ (Protected Branch), bắt buộc tích hợp qua Pull Request / Merge Request và có ít nhất 1 thành viên review Approve.
+- **Nhánh tính năng**: Đặt tên theo chuẩn `feature/<MSSV>-issue-<Số_Issue>-<Tên_ngắn_gọn>`.
+- **Quy chuẩn thông điệp Commit**: Tuân thủ Conventional Commits (`feat:`, `fix:`, `refactor:`, `docs:`).
+- **Vệ sinh mã nguồn**: Sử dụng `.gitignore` đúng chuẩn Maven, nghiêm cấm commit `target/`, file `.jar`, `.class`, `.db`, `.idea/`.
+
+---
+
+## 5. THIẾT LẬP ĐỊNH DANH CÁ NHÂN (GIT CONFIG)
+
+Mỗi thành viên trong nhóm cấu hình định danh Git cục bộ khớp danh sách lớp:
+```bash
+git config --global user.name "MSSV_HoVaTen"
+git config --global user.email "email_sinh_vien@domain"
+```
+
+---
+
+## 6. BẢNG MA TRẬN ĐÓNG GÓP CỦA CÁC THÀNH VIÊN (CONTRIBUTION MATRIX)
+
+Bảng thống kê sự đóng góp của 4 thành viên đối chiếu khi chấm điểm và bảo vệ đồ án:
+
+| MSSV | Họ và Tên | Công việc đã thực hiện | Merge Requests |
+| :---: | :--- | :--- | :---: |
+| **2380600830** | **Lê Văn Huy** *(Trưởng nhóm)* | Xây dựng kiến trúc mạng TCP Socket, Gói tin `Packet`, `ServerCore` đa luồng với Java 22 Virtual Threads, `ClientHandler` và kênh `TCP Push Notification`. | `!1` (hoặc `#1`) |
+| **2380602005** | **Nguyễn Nhật Tấn** | Xây dựng `NetworkClient` kết nối Socket, giám sát thư mục thời gian thực với Java NIO `WatchService`, băm toàn vẹn SHA-256 và bộ lọc `.syncignore`. | `!2` (hoặc `#2`) |
+| **2380601641** | **Nguyễn Xuân Phát** | Thiết kế CSDL SQLite `DatabaseManager`, quản lý lưu trữ `StorageManager` phân mảnh Chunking 64KB (Resumable), Versioning Rollback, Recycle Bin và nén GZIP. | `!3` (hoặc `#3`) |
+| **2380600139** | **Lê Huy Bảo** | Thiết kế giao diện Modern FlatLaf GUI (`MainDashboard`, `ServerFrame`, `ClientFrame`, System Tray Notification), hộp thoại Conflict/Versioning và bộ kiểm thử tự động. | `!4` (hoặc `#4`) |
